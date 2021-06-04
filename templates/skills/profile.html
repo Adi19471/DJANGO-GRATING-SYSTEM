@@ -1,0 +1,84 @@
+{% extends "skills/base.html" %}
+{% load static %}
+
+{% block title %}
+profile
+{% endblock title %}
+
+{% block content %}
+
+<style>
+    table {
+        border: 2px dashed green;
+
+    }
+</style>
+
+
+
+
+
+
+
+<div class="container">
+    <div class="row mt-1">
+        <div class="card col-md-4" style="margin: auto;">
+            <h2 class="bg-primary mt-5 text-center p-2">Profile</h2>
+            <div class="card-body">
+                <img src="{{request.user.update.image.url}}">
+
+            </div>
+
+        </div>
+
+
+
+
+
+    </div>
+
+    <div class="car col-md-5 mt-5">
+        <h2 class="bg-info mt-2 text-center p-1">Details</h2>
+        <form method="POST">
+            {% csrf_token %}
+            <table class="card-body table table-borderless mx-2">
+                <tr>
+                    <th>USERNAME</th>
+                    <td>{{user.username}}</td>
+                </tr>
+                <tr>
+                    <th>FIRSTNAME</th>
+                    <td>{{user.first_name}}</td>
+                </tr>
+
+                <tr>
+                    <td>LASTNAME</td>
+                    <td>{{user.last_name}}</td>
+                </tr>
+
+                <tr>
+                    <td>DATE OF JOINED</td>
+                    <td>{{user.date_joined}}</td>
+                </tr>
+
+                <tr>
+                    <td>USER EMAIL ID</td>
+                    <td>{{user.email}}</td>
+                </tr>
+
+                <tr>
+                    <td>USER LAST LOGIN</td>
+                    <td>{{user.last_login}}</td>
+                </tr>
+
+            </table>
+            <tr>
+
+
+                <a href="{% url 'uppro' %}" class="btn btn-outline-primary">Update</a>
+            </tr>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

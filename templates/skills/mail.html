@@ -1,0 +1,54 @@
+{% extends 'skills/base.html' %}
+
+{% block title %} MAIL SENDING {% endblock %}
+
+{% block content %}
+{% load static %}
+<style type="text/css">
+    form{
+        width: 50%;
+        margin-left: 230px;
+    }
+    .form-group{
+        font-style: oblique;
+        font-family: cursive;
+        font-weight: bold;
+        color: rgb(4, 50, 102);
+        font-size: 20px;
+    }
+    
+</style>
+
+
+    <h1>USER MAIL NOTIFICATION</h1>
+<div class="container">
+<div class="jumbotron">
+    <form action="{%url 'mail' %}" method="POST">
+        <div class="form-group">
+            {% csrf_token %}
+            <label for="exampleFormControlInput1">Email/Gmail</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="example@gmail.com" name="email">
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlSelect1">Title</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1"  name="title">
+           
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlSelect2">Message</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter Message " name="message">
+
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlTextarea1">FEEDBACK</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" name="body_ts"></textarea>
+        </div>
+        <div class="form-control">
+            <center>
+                <button class="btn btn-outline-danger">Subscribe</button>
+            </center>
+        </div>
+    </form>
+</div>
+{% endblock %}

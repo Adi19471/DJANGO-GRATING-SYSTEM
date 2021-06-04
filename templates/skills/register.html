@@ -1,0 +1,33 @@
+{% extends 'skills/base.html' %}
+
+{% block title  %} Registerpage  {% endblock  %}
+{% load  static %}
+
+{% block content  %}
+
+<div class="container">
+<div class="card mt-4 col-md-8">
+<div class="card-header col-md-8  mx-auto">
+    <h3 class="btn btn-info">User Registration Form</h3>
+<div class= "card" style="width:400px">
+<img class="card-img-top" src=https://media1.giphy.com/media/fg3YUuSrMkXtFaKVRf/200w.gif?cid=82a1493ble42olvzu705neeghmjzgyvg0ll5peldd5garptr&rid=200w.gif&ct=g alt="no-images" style="width:100px";>
+{% comment %} <div class="card-body"> {% endcomment %}
+
+
+<div class="card-body">
+<form method="POST">
+{% csrf_token %}
+
+{{form.as_p}}
+<div class="footer-body class= btn btn-secondary ">
+<input type="submit" class="btn btn-outline-info" name="">
+<a href="{% url 'login' %}" class="btn btn-outline-warning">Cancel</a>
+</div>
+</form>
+</div>
+</div>
+</div>
+</div>
+
+
+{% endblock  %}

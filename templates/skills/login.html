@@ -1,0 +1,36 @@
+{% include 'skills/base.html' %}
+
+{% block title %} {% endblock  %}
+
+{% block content %}
+
+<div class="p-5 m-5">
+<div class="col-md-8 mt-8 mb-2 mx-auto border pt-3">
+<div class="text-center text-success ">
+
+    <h1><b>Login_page</b></h1>
+  
+</div>
+<hr><hr>
+<form method="POST">
+{% csrf_token %}
+<div class="form-group">
+<label><b>UserName:-</b><label>
+<input type="text" placeholder="Enter Your Name" class="form-control" name="username">
+</div>
+<div class="form-group">
+<label><b>UserPassword:-</b></label>
+<input type="password" placeholder="Enter Your Password" class="form-control" name="password">
+</div>
+<div class="form-group">
+{% comment %} <label><b>Login</b></label> {% endcomment %}
+<input type="submit" value="Login" class="btn btn-outline-warning" name="" >
+<a href="{% url 'register' %}" class="btn btn-outline-secondary">New User_Register</a>
+</div>
+
+
+</form>
+</div>
+</div>
+
+{% endblock  %}
